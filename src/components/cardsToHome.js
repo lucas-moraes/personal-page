@@ -1,12 +1,12 @@
 import React from "react";
 import styled from "styled-components";
-import {CardChart} from "../components/cardChart";
+import { CardChart } from "./Charts/cardChart";
 
 const CardsToHome = () => {
   const Card = styled.div`
     background-color: #ffffff;
     border: solid 1px #cecece;
-    height: 8rem;
+    height: auto;
     border-radius: 7px;
     margin: 7px;
     box-shadow: 3px 2px 4px 0px #0000002e;
