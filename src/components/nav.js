@@ -80,11 +80,11 @@ const Gists = styled(Gist)`
 const About = styled(Lightbulb)`
   margin: 8px 2px;
   cursor: pointer;
-  color: #000000;
+  color: #efac17;
   transition: 0.5s;
 
   &:hover {
-    color: #9e9e9e;
+    color: #ffe8b6;
     transition: 0.5s;
   }
 `;
@@ -137,7 +137,7 @@ const Tooltip4 = styled.div`
 const Tooltip5 = styled.div`
   border-radius: 4px;
   height: 23px;
-  background-color: #000000;
+  background-color: #e2a00e;
   position: absolute;
   margin: 23% 0 0 3rem;
   box-shadow: 3px 2px 4px 0px #0000002e;
@@ -173,6 +173,7 @@ const Nav = props => {
             <Homepage
               onMouseEnter={e => setHidden0(false)}
               onMouseLeave={e => setHidden0(true)}
+              onClick={e => setHidden0(true)}
             />
           </Link>
         </div>
@@ -189,6 +190,7 @@ const Nav = props => {
             <Whats
               onMouseEnter={e => setHidden1(false)}
               onMouseLeave={e => setHidden1(true)}
+              onClick={e => setHidden1(true)}
             />
           </a>
         </div>
@@ -204,6 +206,7 @@ const Nav = props => {
             <Linke
               onMouseEnter={e => setHidden2(false)}
               onMouseLeave={e => setHidden2(true)}
+              onClick={e => setHidden2(true)}
             />
           </a>
         </div>
@@ -216,6 +219,7 @@ const Nav = props => {
             <Github
               onMouseEnter={e => setHidden3(false)}
               onMouseLeave={e => setHidden3(true)}
+              onClick={e => setHidden3(true)}
             />
           </Link>
         </div>
@@ -227,9 +231,11 @@ const Nav = props => {
             <Gists
               onMouseEnter={e => setHidden4(false)}
               onMouseLeave={e => setHidden4(true)}
+              onClick={e => setHidden4(true)}
             />
           </Link>
         </div>
+        <Divisa />
         <div>
           <Tooltip5 hidden={hidden5}>
             <Text>Sobre</Text>
@@ -238,6 +244,7 @@ const Nav = props => {
             <About
               onMouseEnter={e => setHidden5(false)}
               onMouseLeave={e => setHidden5(true)}
+              onClick={e => setHidden5(true)}
             />
           </Link>
         </div>

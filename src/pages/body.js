@@ -8,9 +8,9 @@ const Body = () => {
   return (
     <>
       <Switch>
-        <Route path="personal-page" exact={true} component={Home} />
-        <Route path="personal-page/repositories" exact={true} component={Repos} />
-        <Route path="personal-page/gists" exact={true} component={Gists} />
+        <Route path="/" exact={true} component={Home} />
+        <Route path="/repositories" exact={true} component={Repos} />
+        <Route path="/gists" exact={true} component={Gists} />
       </Switch>
     </>
   );
