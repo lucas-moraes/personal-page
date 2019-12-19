@@ -1,18 +1,46 @@
 import React from "react";
 import styled, { keyframes } from "styled-components";
 
-export const CardChart = (props) => {
-  let perc = (props.score * 10);
+export const CardChart = props => {
+  let perc = props.score * 10;
   let size = 50;
   let width = 10;
-  let ScoreColor = "#4dccff";
-  let ShadowScoreColor = "#4dccff";
+  let ScoreColor = props.scoreColor;
+  let ShadowScoreColor = props.scoreColor;
 
   let deg = (perc / 100) * 360 + "deg";
 
   const Card = styled.div`
     float: left;
-    padding: 20px;
+    padding: 10px;
+    display: flex;
+
+    flex-basis: 0;
+    flex-grow: 1;
+    max-width: 100%;
+
+    @media only screen and (max-width: 600px) {
+      flex: 0 0 91.666667%;
+      max-width: 91.666667%;
+    }
+    @media only screen and (min-width: 600px) {
+      flex: 0 0 33.333333%;
+      max-width: 33.333333%;
+    }
+    @media only screen and (min-width: 768px) {
+      flex: 0 0 26.333333%;
+      max-width: 26.333333%;
+    }
+    @media only screen and (min-width: 992px) {
+      flex: 0 0 41.666667%;
+      max-width: 41.666667%;
+    }
+
+    @media only screen and (min-width: 1200px) {
+      flex: 0 0 41.666667%;
+      max-width: 41.666667%;
+    }
+
   `;
 
   const DonutChartAnimation = keyframes`
@@ -177,12 +205,22 @@ export const CardChart = (props) => {
       color: #040404;
       text-align: center;
       line-height: ${size - width * 2}px;
-      content: "${perc/10}";
+      content: "${perc / 10}";
     }
+  `;
+  const Text = styled.span`
+    align-self: center;
+    padding: 2px 0 0 11px;
+    border-bottom: solid 2px ${ScoreColor};
+    border-left: solid 2px ${ScoreColor};
+    border-top: solid 2px ${ScoreColor};
+    border-radius: 10px 0 0 10px;
+    width: 80%
   `;
 
   return (
     <Card>
+      <Text>{props.text}</Text>
       <DonutChart>
         <QuadOne />
         <QuadTwo />

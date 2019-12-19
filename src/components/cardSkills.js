@@ -2,7 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import { CardChart } from "./cardChart";
 
-const CardsToHome = () => {
+const CardSkills = () => {
   const Card = styled.div`
     background-color: #ffffff;
     border: solid 1px #cecece;
@@ -15,20 +15,21 @@ const CardsToHome = () => {
   const CardHeader = styled.div`
     border-top-left-radius: 7px;
     border-top-right-radius: 7px;
-    background-color: #b2f1eb;
-    box-shadow: 0px 11px 10px -7px #b2fbff;
+    background-color: #59ff7d;
     padding: 10px;
   `;
 
   const CardBody = styled.div`
     border-radius: 7px;
     display: flex;
+    flex-wrap: wrap;
   `;
 
   const Text = styled.span`
     font-size: 16px;
     margin: 1rem;
-    color: #008275;
+    color: #2f7942;
+    font-weight: bold;
   `;
 
   const Col = styled.div`
@@ -45,17 +46,17 @@ const CardsToHome = () => {
       max-width: 33.333333%;
     }
     @media only screen and (min-width: 768px) {
-      flex: 0 0 50%;
-      max-width: 50%;
+      flex: 0 0 100%;
+      max-width: 100%;
     }
     @media only screen and (min-width: 992px) {
-      flex: 0 0 41.666667%;
-      max-width: 41.666667%;
+      flex: 0 0 91.666667%;
+      max-width: 91.666667%;
     }
 
     @media only screen and (min-width: 1200px) {
-      flex: 0 0 41.666667%;
-      max-width: 41.666667%;
+      flex: 0 0 91.666667%;
+      max-width: 91.666667%;
     }
   `;
 
@@ -67,8 +68,14 @@ const CardsToHome = () => {
             <Text>Developer Skills</Text>
           </CardHeader>
           <CardBody>
-            <CardChart score={5}/>
-            <CardChart score={7}/>
+            <CardChart text={"CSS"} score={7} scoreColor={"#d54dff"} />
+            <CardChart text={"GraphQL"} score={6} scoreColor={"#ff4dbe"} />
+            <CardChart text={"HTML"} score={9} scoreColor={"#4d9aff"} />
+            <CardChart text={"JQuery"} score={8} scoreColor={"#4eff4d"} />
+            <CardChart text={"JavaScript"} score={7} scoreColor={"#ffba4d"} />
+            <CardChart text={"PHP"} score={7} scoreColor={"#ff4d4d"} />
+            <CardChart text={"ReactJS"} score={8} scoreColor={"#4dccff"} />
+            <CardChart text={"SQL"} score={6} scoreColor={"#fffa00"} />
           </CardBody>
         </Card>
       </Col>
@@ -76,4 +83,4 @@ const CardsToHome = () => {
   );
 };
 
-export default CardsToHome;
+export default CardSkills;

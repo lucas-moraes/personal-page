@@ -21,7 +21,7 @@ const LabelOne = styled.div`
 const LabelHeader = () => (
   <>
     <Label>
-      <LabelOne>Billiard Bools</LabelOne>
+      <LabelOne>Lucas Moraes</LabelOne>
     </Label>
   </>
 );

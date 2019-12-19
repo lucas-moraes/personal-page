@@ -1,6 +1,8 @@
 import React from "react";
 import styled from "styled-components";
-import CardsToHome from "../components/cardsToHome";
+import CardResume from "../components/cardResume";
+import CardResumeExtra from "../components/cardResumeExtra";
+import CardSkills from "../components/cardSkills";
 
 const Home = () => {
   const LabelTwo = styled.div`
@@ -13,10 +15,73 @@ const Home = () => {
     flex-wrap: wrap;
   `;
 
+  const Col1 = styled.div`
+    flex-basis: 0;
+    flex-grow: 1;
+    max-width: 100%;
+
+    @media only screen and (max-width: 600px) {
+      flex: 0 0 98.666667%;
+      max-width: 98.666667%;
+    }
+    @media only screen and (min-width: 600px) {
+      flex: 0 0 33.333333%;
+      max-width: 33.333333%;
+    }
+    @media only screen and (min-width: 768px) {
+      flex: 0 0 94%;
+      max-width: 94%;
+    }
+    @media only screen and (min-width: 992px) {
+      flex: 0 0 50%;
+      max-width: 50%;
+    }
+
+    @media only screen and (min-width: 1200px) {
+      flex: 0 0 50%;
+      max-width: 50%;
+    }
+  `;
+
+  const Col2 = styled.div`
+    flex-basis: 0;
+    flex-grow: 1;
+    max-width: 100%;
+
+    @media only screen and (max-width: 600px) {
+      flex: 0 0 98.666667%;
+      max-width: 98.666667%;
+    }
+    @media only screen and (min-width: 600px) {
+      flex: 0 0 33.333333%;
+      max-width: 33.333333%;
+    }
+    @media only screen and (min-width: 768px) {
+      flex: 0 0 94%;
+      max-width: 94%;
+    }
+    @media only screen and (min-width: 992px) {
+      flex: 0 0 50%;
+      max-width: 50%;
+    }
+
+    @media only screen and (min-width: 1200px) {
+      flex: 0 0 50%;
+      max-width: 50%;
+    }
+  `;
 
   return (
     <LabelTwo>
-      <Row><CardsToHome /></Row>
+      <Row>
+        <Col1>
+          <CardResume />
+          <CardResumeExtra />
+        </Col1>
+        <Col2>
+          <CardSkills />
+        </Col2>
+      </Row>
     </LabelTwo>
   );
 };
