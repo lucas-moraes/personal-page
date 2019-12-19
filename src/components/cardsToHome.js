@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import { CardChart } from "./Charts/cardChart";
+import { CardChart } from "./cardChart";
 
 const CardsToHome = () => {
   const Card = styled.div`
