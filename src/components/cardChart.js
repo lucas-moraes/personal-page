@@ -1,8 +1,8 @@
 import React from "react";
 import styled, { keyframes } from "styled-components";
 
-export const CardChart = () => {
-  let perc = 70;
+export const CardChart = (props) => {
+  let perc = (props.score * 10);
   let size = 50;
   let width = 10;
   let ScoreColor = "#4dccff";
@@ -157,6 +157,7 @@ export const CardChart = () => {
     position: absolute;
     background: #f5f5f5;
     -webkit-animation: ${perc > 75 ? ChartCover : ""};
+    box-shadow: 0px 0px 11px 2px #ffffff;
     opacity: ${perc > 75 ? 0 : ""};
   `;
 
@@ -176,7 +177,7 @@ export const CardChart = () => {
       color: #040404;
       text-align: center;
       line-height: ${size - width * 2}px;
-      content: "${perc}";
+      content: "${perc/10}";
     }
   `;
 

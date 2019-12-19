@@ -67,7 +67,8 @@ const CardsToHome = () => {
             <Text>Developer Skills</Text>
           </CardHeader>
           <CardBody>
-            <CardChart />
+            <CardChart score={5}/>
+            <CardChart score={7}/>
           </CardBody>
         </Card>
       </Col>
