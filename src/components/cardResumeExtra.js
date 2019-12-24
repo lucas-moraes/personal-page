@@ -80,7 +80,7 @@ const CardResumeExtra = () => {
       <Col>
         <Card>
           <CardHeader>
-            <Text>Resume Extra</Text>
+            <Text>Resumo Extra</Text>
           </CardHeader>
           <CardBody>
             <div style={{width: "100%", display: "Flex"}}>

@@ -70,11 +70,11 @@ const CardResume = () => {
       <Col>
         <Card>
           <CardHeader>
-            <Text>Resume</Text>
+            <Text>Resumo</Text>
           </CardHeader>
           <CardBody>
             <TextToBody>
-              Developer web 3 years ago.
+              Desenvolvedor web há 3 anos.
             </TextToBody>
           </CardBody>
         </Card>

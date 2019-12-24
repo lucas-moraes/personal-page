@@ -17,6 +17,7 @@
   },
   "devDependencies": {
     "gh-pages": "^2.1.1",
+    "terser-brunch": "^4.0.0",
     "typescript": "3.3.3"
   },
   "scripts": {

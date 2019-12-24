@@ -20,13 +20,18 @@ const CardToGists = props => {
     margin: auto 0;
     width: 100%;
   `;
+  const Link = styled.a`
+    text-decoration: none;
+    color: #000000;
+    align-self: center;
+  `;
 
   return (
     <Card>
       <JS />
-      <a href={props.url} target={"_blank"}>
+      <Link href={props.url} target={"_blank"}>
         <Text>{props.description}</Text>
-      </a>
+      </Link>
     </Card>
   );
 };

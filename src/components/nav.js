@@ -240,7 +240,7 @@ const Nav = props => {
           <Tooltip5 hidden={hidden5}>
             <Text>Sobre</Text>
           </Tooltip5>
-          <Link to="/">
+          <Link to="about">
             <About
               onMouseEnter={e => setHidden5(false)}
               onMouseLeave={e => setHidden5(true)}
