@@ -2,15 +2,15 @@ import React from "react";
 import styled from "styled-components";
 import { RightArrowAlt } from "styled-icons/boxicons-regular/RightArrowAlt";
 
-
-const About = () => {
+const About = props => {
+  const theme = Boolean(props.theme);
   const LabelTwo = styled.div`
     padding-left: 3rem;
     padding-top: 3rem;
   `;
 
   const Text = styled.p`
-    color: #040404;
+    color: ${theme ? "#fff" : "#040404"};
     font-size: 15px;
     margin: auto 0;
     width: 100%;
@@ -22,7 +22,6 @@ const About = () => {
     width: 26px;
     align-self: start;
   `;
-
 
   const Row = styled.div`
     display: flex;
@@ -58,32 +57,32 @@ const About = () => {
   `;
 
   const Col2 = styled.div`
-  flex-basis: 0;
-  flex-grow: 1;
-  max-width: 100%;
+    flex-basis: 0;
+    flex-grow: 1;
+    max-width: 100%;
 
-  @media only screen and (max-width: 600px) {
-    flex: 0 0 91.666667%;
-    max-width: 91.666667%;
-  }
-  @media only screen and (min-width: 600px) {
-    flex: 0 0 91.666667%;
-    max-width: 91.666667%;
-  }
-  @media only screen and (min-width: 768px) {
-    flex: 0 0 91.666667%;
-    max-width: 91.666667%;
-  }
-  @media only screen and (min-width: 992px) {
-    flex: 0 0 91.666667%;
-    max-width: 91.666667%;
-  }
+    @media only screen and (max-width: 600px) {
+      flex: 0 0 91.666667%;
+      max-width: 91.666667%;
+    }
+    @media only screen and (min-width: 600px) {
+      flex: 0 0 91.666667%;
+      max-width: 91.666667%;
+    }
+    @media only screen and (min-width: 768px) {
+      flex: 0 0 91.666667%;
+      max-width: 91.666667%;
+    }
+    @media only screen and (min-width: 992px) {
+      flex: 0 0 91.666667%;
+      max-width: 91.666667%;
+    }
 
-  @media only screen and (min-width: 1200px) {
-    flex: 0 0 91.666667%;
-    max-width: 91.666667%;
-  }
-`;
+    @media only screen and (min-width: 1200px) {
+      flex: 0 0 91.666667%;
+      max-width: 91.666667%;
+    }
+  `;
 
   return (
     <LabelTwo>
@@ -96,12 +95,12 @@ const About = () => {
           Totalmente Open Source, o projeto deverá ser ajustado e melhorado ao
           gosto do usuário.
         </Text>
-        <br></br>
+        <br />
       </Col>
       <Row>
         <Col2>
           <Text>As tecnologias utilizadas para esse projeto foram:</Text>
-          <br></br>
+          <br />
 
           <div style={{ width: "100%", display: "Flex" }}>
             <Tag />

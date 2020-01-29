@@ -1,20 +1,21 @@
 import React from "react";
 import styled from "styled-components";
 
-const CardResume = () => {
+const CardResume = props => {
+  const theme = Boolean(props.theme);
   const Card = styled.div`
-    background-color: #ffffff;
-    border: solid 1px #cecece;
+    background-color: ${theme ? "#252839" : "#ffffff"};
+    border: solid 1px ${theme ? "#252839" : "#cecece"};
     height: auto;
     border-radius: 7px;
     margin: 7px;
-    box-shadow: 3px 2px 4px 0px #0000002e;
+    box-shadow: 3px 2px 4px 0px ${theme ? "none" : "#0000002e"};
   `;
 
   const CardHeader = styled.div`
     border-top-left-radius: 7px;
     border-top-right-radius: 7px;
-    background-color: #a059ff;
+    background-color: ${theme ? "#2e3348" : "#a059ff"};
     padding: 10px;
   `;
 
@@ -27,14 +28,14 @@ const CardResume = () => {
   const Text = styled.span`
     font-size: 16px;
     margin: 1rem;
-    color: #ffffff;
+    color: ${theme ? "#e4e4e4" : "#ffffff"};
     font-weight: bold;
   `;
 
   const TextToBody = styled.span`
     font-size: 16px;
     margin: 1rem;
-    color: #000000;
+    color: ${theme ? "#e4e4e4" : "#000000"};
   `;
 
   const Col = styled.div`
@@ -73,9 +74,7 @@ const CardResume = () => {
             <Text>Resumo</Text>
           </CardHeader>
           <CardBody>
-            <TextToBody>
-              Desenvolvedor web há 3 anos.
-            </TextToBody>
+            <TextToBody>Desenvolvedor web há 3 anos.</TextToBody>
           </CardBody>
         </Card>
       </Col>

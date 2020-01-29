@@ -4,11 +4,11 @@ import Nav from "../components/nav";
 import Labelheader from "../components/header";
 import Body from "../pages/body";
 
-export const GlobalStyle = createGlobalStyle`
+const GlobalStyle = createGlobalStyle`
   @import url('https://fonts.googleapis.com/css?family=Nunito+Sans&display=swap');
 
   body {
-    background: #fbfbfb;
+    background: ${props => (Boolean(props.theme) ? "#1b1e2b" : "#fbfbfb")}; 
     margin: 0;
     font-family: Nunito Sans, sans-serif;
     -webkit-font-smoothing: antialiased;
@@ -19,12 +19,15 @@ export const GlobalStyle = createGlobalStyle`
 `;
 
 const App = () => {
+  const d = new Date();
+  const h = d.getHours();
+
   return (
     <>
-      <GlobalStyle />
-      <Nav />
-      <Labelheader />
-      <Body />
+      <GlobalStyle theme={h > 18 ? true : false} />
+      <Nav theme={h > 18 ? true : false} />
+      <Labelheader theme={h > 18 ? true : false} />
+      <Body theme={h > 18 ? true : false} />
     </>
   );
 };

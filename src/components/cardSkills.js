@@ -2,20 +2,21 @@ import React from "react";
 import styled from "styled-components";
 import { CardChart } from "./cardChart";
 
-const CardSkills = () => {
+const CardSkills = props => {
+  const theme = Boolean(props.theme);
   const Card = styled.div`
-    background-color: #ffffff;
-    border: solid 1px #cecece;
+    background-color: ${theme ? "#252839" : "#ffffff"};
+    border: solid 1px ${theme ? "#252839" : "#cecece"};
     height: auto;
     border-radius: 7px;
     margin: 7px;
-    box-shadow: 3px 2px 4px 0px #0000002e;
+    box-shadow: 3px 2px 4px 0px ${theme ? "none" : "#0000002e"};
   `;
 
   const CardHeader = styled.div`
     border-top-left-radius: 7px;
     border-top-right-radius: 7px;
-    background-color: #59ff7d;
+    background-color: ${theme ? "#2e3348" : "#59ff7d"};
     padding: 10px;
   `;
 
@@ -28,7 +29,7 @@ const CardSkills = () => {
   const Text = styled.span`
     font-size: 16px;
     margin: 1rem;
-    color: #2f7942;
+    color: ${theme ? "#e4e4e4" : "#2f7942"};
     font-weight: bold;
   `;
 
@@ -68,14 +69,54 @@ const CardSkills = () => {
             <Text>Developer Skills</Text>
           </CardHeader>
           <CardBody>
-            <CardChart text={"CSS"} score={7} scoreColor={"#d54dff"} />
-            <CardChart text={"GraphQL"} score={6} scoreColor={"#ff4dbe"} />
-            <CardChart text={"HTML"} score={9} scoreColor={"#4d9aff"} />
-            <CardChart text={"JQuery"} score={8} scoreColor={"#4eff4d"} />
-            <CardChart text={"JavaScript"} score={7} scoreColor={"#ffba4d"} />
-            <CardChart text={"PHP"} score={7} scoreColor={"#ff4d4d"} />
-            <CardChart text={"ReactJS"} score={8} scoreColor={"#4dccff"} />
-            <CardChart text={"SQL"} score={6} scoreColor={"#fffa00"} />
+            <CardChart
+              {...props}
+              text={"CSS"}
+              score={7}
+              scoreColor={"#d54dff"}
+            />
+            <CardChart
+              {...props}
+              text={"GraphQL"}
+              score={6}
+              scoreColor={"#ff4dbe"}
+            />
+            <CardChart
+              {...props}
+              text={"HTML"}
+              score={9}
+              scoreColor={"#4d9aff"}
+            />
+            <CardChart
+              {...props}
+              text={"JQuery"}
+              score={8}
+              scoreColor={"#4eff4d"}
+            />
+            <CardChart
+              {...props}
+              text={"JavaScript"}
+              score={7}
+              scoreColor={"#ffba4d"}
+            />
+            <CardChart
+              {...props}
+              text={"PHP"}
+              score={7}
+              scoreColor={"#ff4d4d"}
+            />
+            <CardChart
+              {...props}
+              text={"ReactJS"}
+              score={8}
+              scoreColor={"#4dccff"}
+            />
+            <CardChart
+              {...props}
+              text={"SQL"}
+              score={6}
+              scoreColor={"#fffa00"}
+            />
           </CardBody>
         </Card>
       </Col>

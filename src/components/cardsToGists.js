@@ -3,6 +3,7 @@ import styled from "styled-components";
 import { FileJs } from "styled-icons/boxicons-solid/FileJs";
 
 const CardToGists = props => {
+  const theme = Boolean(props.theme);
   const Card = styled.div`
     display: flex;
     width: 100%;
@@ -19,6 +20,7 @@ const CardToGists = props => {
     font-size: 12px;
     margin: auto 0;
     width: 100%;
+    color: ${theme ? "#fff" : "#000"};
   `;
   const Link = styled.a`
     text-decoration: none;

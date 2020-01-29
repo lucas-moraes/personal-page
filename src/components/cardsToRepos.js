@@ -6,6 +6,7 @@ import { FileCode } from "styled-icons/fa-regular/FileCode";
 import { Eye } from "styled-icons/fa-regular/Eye";
 
 const CardsToRepos = props => {
+  const theme = Boolean(props.theme);
   function generateRandomColor() {
     let r = Math.round(Math.random() * 255);
     let g = Math.round(Math.random() * 255);
@@ -15,19 +16,21 @@ const CardsToRepos = props => {
 
   const Card = styled.div`
     background-color: ${props => generateRandomColor()};
-    border: solid 1px #cecece;
+    border: solid 1px ${theme ? "none" : "#cecece"};
     height: 8rem;
     border-radius: 7px;
     margin: 7px;
-    box-shadow: 3px 2px 4px 0px #0000002e;
+    box-shadow: ${theme
+      ? "inset 0 2px 11px 0px #a3a5aa"
+      : "3px 2px 4px 0px #0000002e"};
   `;
 
   const CardHeader = styled.div`
     border-top-left-radius: 7px;
     border-top-right-radius: 7px;
-    background-color: #000000;
+    background-color: ${theme ? "#d1d2d433" : "#000000"};
     height: 3rem;
-    box-shadow: 0px 11px 10px -7px #15151570;
+    box-shadow: ${theme ? "none" : "0px 11px 10px -7px #15151570"};
   `;
 
   const GitLogo = styled(ScGithub)`
@@ -56,12 +59,14 @@ const CardsToRepos = props => {
     width: 38px;
     color: #000;
     padding: 15px;
+    color: ${theme ?  "#FFF" : "#000"};
   `;
 
   const Text = styled.span`
     height: 29px;
     padding: 30px 0 20px 0;
     font-size: 15px;
+    color: ${theme ? "#FFF" : "#000"};
   `;
 
   const Col = styled.div`

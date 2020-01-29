@@ -5,14 +5,26 @@ import Repos from "./repos";
 import Gists from "./gists";
 import About from "./about";
 
-const Body = () => {
+const Body = props => {
   return (
     <>
       <Switch>
-        <Route path="/" exact={true} component={Home} />
-        <Route path="/repositories" exact={true} component={Repos} />
-        <Route path="/gists" exact={true} component={Gists} />
-        <Route path="/about" exact={true} component={About} />
+        <Route path="/" exact={true} component={() => <Home {...props} />} />
+        <Route
+          path="/repositories"
+          exact={true}
+          component={() => <Repos {...props} />}
+        />
+        <Route
+          path="/gists"
+          exact={true}
+          component={() => <Gists {...props} />}
+        />
+        <Route
+          path="/about"
+          exact={true}
+          component={() => <About {...props} />}
+        />
       </Switch>
     </>
   );

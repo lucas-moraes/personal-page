@@ -4,7 +4,8 @@ import CardResume from "../components/cardResume";
 import CardResumeExtra from "../components/cardResumeExtra";
 import CardSkills from "../components/cardSkills";
 
-const Home = () => {
+const Home = props => {
+  const theme = Boolean(props.theme);
   const LabelTwo = styled.div`
     padding-left: 3rem;
     padding-top: 3rem;
@@ -75,11 +76,11 @@ const Home = () => {
     <LabelTwo>
       <Row>
         <Col1>
-          <CardResume />
-          <CardResumeExtra />
+          <CardResume theme={theme} />
+          <CardResumeExtra theme={theme} />
         </Col1>
         <Col2>
-          <CardSkills />
+          <CardSkills theme={theme} />
         </Col2>
       </Row>
     </LabelTwo>

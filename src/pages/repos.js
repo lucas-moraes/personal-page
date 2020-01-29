@@ -4,7 +4,8 @@ import { SkeletonCardToRepos } from "../components/skeleton";
 import CardToRepos from "../components/cardsToRepos";
 import { API } from "../api";
 
-const Repos = () => {
+const Repos = props => {
+  console.log(props);
   const [name, setName] = useState("");
 
   useEffect(() => {
@@ -36,10 +37,10 @@ const Repos = () => {
 
   const Loading = () => (
     <>
-      <SkeletonCardToRepos />
-      <SkeletonCardToRepos />
-      <SkeletonCardToRepos />
-      <SkeletonCardToRepos />
+      <SkeletonCardToRepos {...props} />
+      <SkeletonCardToRepos {...props} />
+      <SkeletonCardToRepos {...props} />
+      <SkeletonCardToRepos {...props} />
     </>
   );
 
@@ -49,7 +50,9 @@ const Repos = () => {
         {typeof name === "string" ? (
           <Loading />
         ) : (
-          items.map((text, i = 1) => <CardToRepos key={i++} text={text} />)
+          items.map((text, i = 1) => (
+            <CardToRepos {...props} key={i++} text={text} />
+          ))
         )}
       </Row>
     </LabelTwo>

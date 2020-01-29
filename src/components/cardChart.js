@@ -2,6 +2,7 @@ import React from "react";
 import styled, { keyframes } from "styled-components";
 
 export const CardChart = props => {
+  const theme = Boolean(props.theme);
   let perc = props.score * 10;
   let size = 50;
   let width = 10;
@@ -40,7 +41,6 @@ export const CardChart = props => {
       flex: 0 0 41.666667%;
       max-width: 41.666667%;
     }
-
   `;
 
   const DonutChartAnimation = keyframes`
@@ -57,7 +57,7 @@ export const CardChart = props => {
   const DonutChart = styled.div`
     width: ${size}px;
     height: ${size}px;
-    background: #f5f5f5;
+    background: ${theme ? "#252839" : "#f5f5f5"};
     position: relative;
     border-radius: 50%;
     -webkit-animation: ${DonutChartAnimation};
@@ -156,7 +156,7 @@ export const CardChart = props => {
     left: 0;
     border-radius: 100% 0 0 0;
     background: ${ScoreColor};
-    box-shadow: 0px 0px 11px 0px ${ShadowScoreColor}
+    box-shadow: 0px 0px 11px 0px ${ShadowScoreColor};
     position: absolute;
     -webkit-transform: rotate(270deg);
     -webkit-transform-origin: bottom right;
@@ -183,9 +183,10 @@ export const CardChart = props => {
     border-radius: 100% 0 0 0;
     display: block;
     position: absolute;
-    background: #f5f5f5;
+    background: ${theme ? "#252839" : "#f5f5f5"};
     -webkit-animation: ${perc > 75 ? ChartCover : ""};
-    box-shadow: 0px 0px 11px 2px #ffffff;
+    box-shadow: 0px 0px 11px 2px
+      ${theme ? "#252839" : "#ffffff"};
     opacity: ${perc > 75 ? 0 : ""};
   `;
 
@@ -194,7 +195,7 @@ export const CardChart = props => {
     left: ${width}px;
     width: ${size - width * 2}px;
     height: ${size - width * 2}px;
-    background: #fff;
+    background: ${theme ? "#252839" : "#ffffff"};
     position: absolute;
     border-radius: 50%;
 
@@ -202,7 +203,7 @@ export const CardChart = props => {
       display: inline-block;
       width: 100%;
       font-size: ${size / 3}px;
-      color: #040404;
+      color: ${theme ? "#ffffff" : "#252839"}; 
       text-align: center;
       line-height: ${size - width * 2}px;
       content: "${perc / 10}";
@@ -215,7 +216,8 @@ export const CardChart = props => {
     border-left: solid 2px ${ScoreColor};
     border-top: solid 2px ${ScoreColor};
     border-radius: 10px 0 0 10px;
-    width: 80%
+    color: ${theme ? "#ffffff" : "#252839"};
+    width: 80%;
   `;
 
   return (

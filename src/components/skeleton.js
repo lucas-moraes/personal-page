@@ -1,9 +1,10 @@
 import React from "react";
 import styled from "styled-components";
 
-export const SkeletonCardToRepos = () => {
+export const SkeletonCardToRepos = props => {
+  const theme = Boolean(props.theme);
   const Card = styled.div`
-    background-color: #ececec;
+    background-color: ${theme ? "#252839" : "#ececec"};
     height: 8rem;
     border-radius: 7px;
     margin: 7px;
@@ -93,9 +94,10 @@ export const SkeletonCardToRepos = () => {
   );
 };
 
-export const SkeletonCardToGists = () => {
+export const SkeletonCardToGists = props => {
+  const theme = Boolean(props.theme);
   const Card = styled.div`
-    background-color: #ececec;
+    background-color: ${theme ? "#252839" : "#ececec"};
     height: 1.5rem;
     width: 90%;
     border-radius: 5px;

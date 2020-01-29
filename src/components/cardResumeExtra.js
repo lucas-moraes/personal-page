@@ -2,20 +2,22 @@ import React from "react";
 import styled from "styled-components";
 import { RightArrowAlt } from "styled-icons/boxicons-regular/RightArrowAlt";
 
-const CardResumeExtra = () => {
+const CardResumeExtra = (props) => {
+  const theme = Boolean(props.theme);
   const Card = styled.div`
-    background-color: #ffffff;
-    border: solid 1px #cecece;
+    background-color: ${theme ? "#252839" : "#ffffff"};
+    border: solid 1px ${theme ? "#252839" : "#cecece"};
     height: auto;
     border-radius: 7px;
     margin: 7px;
-    box-shadow: 3px 2px 4px 0px #0000002e;
+    box-shadow: 3px 2px 4px 0px
+      ${theme ? "none" : "#0000002e"};
   `;
 
   const CardHeader = styled.div`
     border-top-left-radius: 7px;
     border-top-right-radius: 7px;
-    background-color: #ffbc59;
+    background-color: ${theme ? "#2e3348" : "#ffbc59"};
     padding: 10px;
   `;
 
@@ -29,14 +31,14 @@ const CardResumeExtra = () => {
   const Text = styled.span`
     font-size: 16px;
     margin: 1rem;
-    color: #754702;
+    color: ${theme ? "#e4e4e4" : "#754702"};
     font-weight: bold;
   `;
 
   const TextToBody = styled.span`
     font-size: 16px;
     margin-left: 1rem;
-    color: #000000;
+    color: ${theme ? "#e4e4e4" : "#000000"};
     align-self: start;
     width: 100%;
   `;
@@ -83,16 +85,17 @@ const CardResumeExtra = () => {
             <Text>Resumo Extra</Text>
           </CardHeader>
           <CardBody>
-            <div style={{width: "100%", display: "Flex"}}>
+            <div style={{ width: "100%", display: "Flex" }}>
               <Tag />
               <TextToBody>
                 Projeto Fullstack ativo chamado Cloudcont.app
               </TextToBody>
             </div>
-            <div style={{width: "100%", display: "Flex"}}>
+            <div style={{ width: "100%", display: "Flex" }}>
               <Tag />
               <TextToBody>
-                Bibliotecas e ferramentas mais trabalhadas no momento: ReactJS, Styled-Components, GraphQL.
+                Bibliotecas e ferramentas mais trabalhadas no momento: ReactJS,
+                Styled-Components, GraphQL.
               </TextToBody>
             </div>
           </CardBody>

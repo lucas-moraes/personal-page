@@ -8,23 +8,34 @@ import { Gist } from "styled-icons/octicons/Gist";
 import { Home } from "styled-icons/boxicons-solid/Home";
 import { Lightbulb } from "styled-icons/typicons/Lightbulb";
 
+
+
+const Nav = props => {
+  const theme = Boolean(props.theme);
+  const [hidden0, setHidden0] = useState(true);
+  const [hidden1, setHidden1] = useState(true);
+  const [hidden2, setHidden2] = useState(true);
+  const [hidden3, setHidden3] = useState(true);
+  const [hidden4, setHidden4] = useState(true);
+  const [hidden5, setHidden5] = useState(true);
+
 const NavStyle = styled.div`
   display: grid;
   height: 100%;
   width: 40px;
-  background: #ffffff;
+  background: ${theme ? "#252839" : "#fbfbfb"};
   position: fixed;
-  box-shadow: 2px 0 17px #e4e4e4;
+  box-shadow: 2px 0 17px ${theme ? "none" : "#e4e4e4"};
 `;
 
 const Homepage = styled(Home)`
   margin: 8px;
   cursor: pointer;
-  color: #b600ff;
+  color: ${theme ? "#e4e4e4" : "#b500ff"};
   transition: 0.5s;
 
   &:hover {
-    color: #e9b3ff;
+    color: #b600ff;
     transition: 0.5s;
   }
 `;
@@ -32,11 +43,11 @@ const Homepage = styled(Home)`
 const Whats = styled(WhatsappSquare)`
   margin: 5px;
   cursor: pointer;
-  color: #00b700;
+  color: ${theme ? "#e4e4e4" : "#00b700"};
   transition: 0.5s;
 
   &:hover {
-    color: #00d000;
+    color: #00b700;
     transition: 0.5s;
   }
 `;
@@ -44,11 +55,11 @@ const Whats = styled(WhatsappSquare)`
 const Linke = styled(LinkedinSquare)`
   margin: 5px;
   cursor: pointer;
-  color: #00b7ff;
+  color: ${theme ? "#e4e4e4" : "#00b7ff"};
   transition: 0.5s;
 
   &:hover {
-    color: #54cfff;
+    color: #00b7ff;
     transition: 0.5s;
   }
 `;
@@ -56,7 +67,7 @@ const Linke = styled(LinkedinSquare)`
 const Github = styled(GithubSquare)`
   margin: 8px;
   cursor: pointer;
-  color: #000000;
+  color: ${theme ? "#e4e4e4" : "#000000"};
   transition: 0.5s;
 
   &:hover {
@@ -68,7 +79,7 @@ const Github = styled(GithubSquare)`
 const Gists = styled(Gist)`
   margin: 8px;
   cursor: pointer;
-  color: #000000;
+  color: ${theme ? "#e4e4e4" : "#000000"};
   transition: 0.5s;
 
   &:hover {
@@ -80,11 +91,11 @@ const Gists = styled(Gist)`
 const About = styled(Lightbulb)`
   margin: 8px 2px;
   cursor: pointer;
-  color: #efac17;
+  color: ${theme ? "#e4e4e4" : "#efac17"}; 
   transition: 0.5s;
 
   &:hover {
-    color: #ffe8b6;
+    color: #e2a00e;
     transition: 0.5s;
   }
 `;
@@ -154,13 +165,7 @@ const Divisa = styled.div`
   margin: 6px auto;
 `;
 
-const Nav = props => {
-  const [hidden0, setHidden0] = useState(true);
-  const [hidden1, setHidden1] = useState(true);
-  const [hidden2, setHidden2] = useState(true);
-  const [hidden3, setHidden3] = useState(true);
-  const [hidden4, setHidden4] = useState(true);
-  const [hidden5, setHidden5] = useState(true);
+
 
   return (
     <NavStyle>
