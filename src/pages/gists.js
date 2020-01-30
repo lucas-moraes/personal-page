@@ -4,7 +4,7 @@ import { SkeletonCardToGists } from "../components/skeleton";
 import CardToGists from "../components/cardsToGists";
 import { API } from "../api";
 
-const Gists = () => {
+const Gists = (props) => {
   const [name, setName] = useState("vazio");
   useEffect(() => {
     const gist = `query { viewer { gists(first:100 privacy:PUBLIC){ nodes{ description url } } } }`;
@@ -38,10 +38,10 @@ const Gists = () => {
 
   const Loading = () => (
     <>
-      <SkeletonCardToGists />
-      <SkeletonCardToGists />
-      <SkeletonCardToGists />
-      <SkeletonCardToGists />
+      <SkeletonCardToGists {...props}/>
+      <SkeletonCardToGists {...props}/>
+      <SkeletonCardToGists {...props}/>
+      <SkeletonCardToGists {...props}/>
     </>
   );
 
@@ -56,6 +56,7 @@ const Gists = () => {
               key={i++}
               description={card.description}
               url={card.url}
+              {...props}
             />
           ))
         )}

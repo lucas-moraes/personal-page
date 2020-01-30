@@ -6,9 +6,7 @@ import { LinkedinSquare } from "styled-icons/boxicons-logos/LinkedinSquare";
 import { GithubSquare } from "styled-icons/fa-brands/GithubSquare";
 import { Gist } from "styled-icons/octicons/Gist";
 import { Home } from "styled-icons/boxicons-solid/Home";
-import { Lightbulb } from "styled-icons/typicons/Lightbulb";
-
-
+import { Coffee } from "styled-icons/boxicons-regular/Coffee";
 
 const Nav = props => {
   const theme = Boolean(props.theme);
@@ -88,8 +86,8 @@ const Gists = styled(Gist)`
   }
 `;
 
-const About = styled(Lightbulb)`
-  margin: 8px 2px;
+const About = styled(Coffee)`
+  margin: 7px 6px;
   cursor: pointer;
   color: ${theme ? "#e4e4e4" : "#efac17"}; 
   transition: 0.5s;

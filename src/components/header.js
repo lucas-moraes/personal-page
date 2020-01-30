@@ -6,7 +6,8 @@ const LabelHeader = props => {
   const Label = styled.div`
     z-index: -1;
     margin-left: 45px;
-    height: 100%;
+    display: flex;
+    justify-content: space-between;
     position: absolute;
     width: 85%;
   `;
@@ -20,6 +21,7 @@ const LabelHeader = props => {
     margin-bottom: 1.5rem;
     margin-top: 5px;
   `;
+
   return (
     <>
       <Label>
