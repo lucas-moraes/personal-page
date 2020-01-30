@@ -12,6 +12,7 @@ These instructions will get you a copy of the project up and running on your loc
 ```
 NodeJS ^5.00
 Surge Account
+GitHb Personal Access Token with the  public_repo and read:org checked
 ```
 
 ### Installing
