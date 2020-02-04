@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useState, useEffect} from "react";
 import { createGlobalStyle } from "styled-components";
 import Nav from "../components/nav";
 import Labelheader from "../components/header";
@@ -15,19 +15,38 @@ const GlobalStyle = createGlobalStyle`
     -moz-osx-font-smoothing: grayscale;
     text-rendering: optimizeLegibility;
     user-select: none;
+    transition: 0.5s;
   }
 `;
 
-const App = () => {
-  const d = new Date();
-  const h = d.getHours();
+const App = (props) => {
+  const[Default, setDefault] = useState(true);
+
+  useEffect(() => {
+    const d = new Date();
+    const h = d.getHours();
+
+    if(h > 18){
+      setDefault(true)
+    } else {
+      setDefault(false)
+    }
+  }, []);
+
+  function handleChange() {
+    if(Default){
+      setDefault(false)
+    } else {
+      setDefault(true)
+    }
+  }
 
   return (
     <>
-      <GlobalStyle theme={h > 18 ? true : false} />
-      <Nav theme={h > 18 ? true : false} />
-      <Labelheader theme={h > 18 ? true : false} />
-      <Body theme={h > 18 ? true : false} />
+      <GlobalStyle theme={Default} />
+      <Nav theme={Default} handleChange={handleChange}/>
+      <Labelheader theme={Default} />
+      <Body theme={Default} />
     </>
   );
 };

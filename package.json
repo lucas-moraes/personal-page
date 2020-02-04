@@ -1,7 +1,8 @@
 {
   "name": "personal-page",
-  "version": "1.0.0",
-  "description": "",
+  "author": "Lucas Moraes",
+  "version": "2.0.0",
+  "description": "For the Developer who doesn't want to spend time building a website / portfolio, or wanted a template to start, this project can help you ;)",
   "keywords": [
     "reactjs",
     "styled-components"
@@ -16,7 +17,6 @@
     "styled-icons": "8.4.2"
   },
   "devDependencies": {
-    "gh-pages": "^2.1.1",
     "terser-brunch": "^4.0.0",
     "typescript": "3.3.3"
   },

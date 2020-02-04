@@ -7,6 +7,7 @@ const CardResumeExtra = (props) => {
   const Card = styled.div`
     background-color: ${theme ? "#252839" : "#ffffff"};
     border: solid 1px ${theme ? "#252839" : "#cecece"};
+    transition: 0.5s;
     height: auto;
     border-radius: 7px;
     margin: 7px;
@@ -18,10 +19,12 @@ const CardResumeExtra = (props) => {
     border-top-left-radius: 7px;
     border-top-right-radius: 7px;
     background-color: ${theme ? "#2e3348" : "#ffbc59"};
+    transition: 0.5s;
     padding: 10px;
   `;
 
   const CardBody = styled.div`
+  transition: 0.5s;
     border-radius: 7px;
     display: flex;
     flex-wrap: wrap;
@@ -32,6 +35,7 @@ const CardResumeExtra = (props) => {
     font-size: 16px;
     margin: 1rem;
     color: ${theme ? "#e4e4e4" : "#754702"};
+    transition: 0.5s;
     font-weight: bold;
   `;
 
@@ -39,6 +43,7 @@ const CardResumeExtra = (props) => {
     font-size: 16px;
     margin-left: 1rem;
     color: ${theme ? "#e4e4e4" : "#000000"};
+    transition: 0.5s;
     align-self: start;
     width: 100%;
   `;

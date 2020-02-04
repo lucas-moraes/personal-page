@@ -7,6 +7,8 @@ import { GithubSquare } from "styled-icons/fa-brands/GithubSquare";
 import { Gist } from "styled-icons/octicons/Gist";
 import { Home } from "styled-icons/boxicons-solid/Home";
 import { Coffee } from "styled-icons/boxicons-regular/Coffee";
+import { Sun } from "styled-icons/boxicons-regular/Sun";
+import { Moon } from "styled-icons/boxicons-regular/Moon";
 
 const Nav = props => {
   const theme = Boolean(props.theme);
@@ -17,153 +19,216 @@ const Nav = props => {
   const [hidden4, setHidden4] = useState(true);
   const [hidden5, setHidden5] = useState(true);
 
-const NavStyle = styled.div`
-  display: grid;
-  height: 100%;
-  width: 40px;
-  background: ${theme ? "#252839" : "#fbfbfb"};
-  position: fixed;
-  box-shadow: 2px 0 17px ${theme ? "none" : "#e4e4e4"};
-`;
-
-const Homepage = styled(Home)`
-  margin: 8px;
-  cursor: pointer;
-  color: ${theme ? "#e4e4e4" : "#b500ff"};
-  transition: 0.5s;
-
-  &:hover {
-    color: #b600ff;
+  const NavStyle = styled.div`
+    display: grid;
+    height: 100%;
+    width: 40px;
+    background: ${theme ? "#252839" : "#fbfbfb"};
+    position: fixed;
+    box-shadow: 2px 0 17px ${theme ? "none" : "#e4e4e4"};
     transition: 0.5s;
-  }
-`;
+  `;
 
-const Whats = styled(WhatsappSquare)`
-  margin: 5px;
-  cursor: pointer;
-  color: ${theme ? "#e4e4e4" : "#00b700"};
-  transition: 0.5s;
-
-  &:hover {
-    color: #00b700;
+  const Day = styled(Sun)`
+    margin: 8px;
+    cursor: pointer;
+    color: #ff7700;
     transition: 0.5s;
-  }
-`;
+  `;
 
-const Linke = styled(LinkedinSquare)`
-  margin: 5px;
-  cursor: pointer;
-  color: ${theme ? "#e4e4e4" : "#00b7ff"};
-  transition: 0.5s;
-
-  &:hover {
-    color: #00b7ff;
+  const Night = styled(Moon)`
+    margin: 8px;
+    cursor: pointer;
+    color: ${theme ? "#e4e4e4" : "#b500ff"};
     transition: 0.5s;
-  }
-`;
+  `;
 
-const Github = styled(GithubSquare)`
-  margin: 8px;
-  cursor: pointer;
-  color: ${theme ? "#e4e4e4" : "#000000"};
-  transition: 0.5s;
-
-  &:hover {
-    color: #9e9e9e;
+  const Homepage = styled(Home)`
+    margin: 8px;
+    cursor: pointer;
+    color: ${theme ? "#e4e4e4" : "#b500ff"};
     transition: 0.5s;
-  }
-`;
 
-const Gists = styled(Gist)`
-  margin: 8px;
-  cursor: pointer;
-  color: ${theme ? "#e4e4e4" : "#000000"};
-  transition: 0.5s;
+    &:hover {
+      color: #b600ff;
+      transition: 0.5s;
+    }
+  `;
 
-  &:hover {
-    color: #9e9e9e;
+  const Whats = styled(WhatsappSquare)`
+    margin: 5px;
+    cursor: pointer;
+    color: ${theme ? "#e4e4e4" : "#00b700"};
     transition: 0.5s;
-  }
-`;
 
-const About = styled(Coffee)`
-  margin: 7px 6px;
-  cursor: pointer;
-  color: ${theme ? "#e4e4e4" : "#efac17"}; 
-  transition: 0.5s;
+    &:hover {
+      color: #00b700;
+      transition: 0.5s;
+    }
+  `;
 
-  &:hover {
-    color: #e2a00e;
+  const Linke = styled(LinkedinSquare)`
+    margin: 5px;
+    cursor: pointer;
+    color: ${theme ? "#e4e4e4" : "#00b7ff"};
     transition: 0.5s;
-  }
-`;
 
-const Tooltip0 = styled.div`
-  border-radius: 4px;
-  height: 22px;
-  background-color: #b600ff;
-  position: absolute;
-  margin: 23% 0 0 3rem;
-  box-shadow: 3px 2px 4px 0px #0000002e;
-`;
+    &:hover {
+      color: #00b7ff;
+      transition: 0.5s;
+    }
+  `;
 
-const Tooltip1 = styled.div`
-  border-radius: 4px;
-  height: 22px;
-  background-color: #4cb80d;
-  position: absolute;
-  margin: 23% 0 0 3rem;
-  box-shadow: 3px 2px 4px 0px #0000002e;
-`;
+  const Github = styled(GithubSquare)`
+    margin: 8px;
+    cursor: pointer;
+    color: ${theme ? "#e4e4e4" : "#000000"};
+    transition: 0.5s;
 
-const Tooltip2 = styled.div`
-  border-radius: 4px;
-  height: 22px;
-  background-color: #08b6fa;
-  position: absolute;
-  margin: 23% 0 0 3rem;
-  box-shadow: 3px 2px 4px 0px #0000002e;
-`;
+    &:hover {
+      color: #9e9e9e;
+      transition: 0.5s;
+    }
+  `;
 
-const Tooltip3 = styled.div`
-  border-radius: 4px;
-  height: 23px;
-  background-color: #000000;
-  position: absolute;
-  margin: 23% 0 0 3rem;
-  box-shadow: 3px 2px 4px 0px #0000002e;
-`;
+  const Gists = styled(Gist)`
+    margin: 8px;
+    cursor: pointer;
+    color: ${theme ? "#e4e4e4" : "#000000"};
+    transition: 0.5s;
 
-const Tooltip4 = styled.div`
-  border-radius: 4px;
-  height: 23px;
-  background-color: #000000;
-  position: absolute;
-  margin: 23% 0 0 3rem;
-  box-shadow: 3px 2px 4px 0px #0000002e;
-`;
+    &:hover {
+      color: #9e9e9e;
+      transition: 0.5s;
+    }
+  `;
 
-const Tooltip5 = styled.div`
-  border-radius: 4px;
-  height: 23px;
-  background-color: #e2a00e;
-  position: absolute;
-  margin: 23% 0 0 3rem;
-  box-shadow: 3px 2px 4px 0px #0000002e;
-`;
+  const About = styled(Coffee)`
+    margin: 7px 6px;
+    cursor: pointer;
+    color: ${theme ? "#e4e4e4" : "#efac17"};
+    transition: 0.5s;
 
-const Text = styled.span`
-  color: #ffffff;
-  padding: 0 9px;
-`;
+    &:hover {
+      color: #e2a00e;
+      transition: 0.5s;
+    }
+  `;
 
-const Divisa = styled.div`
-  border-bottom: solid 2px #e2e2e2;
-  width: 24px;
-  margin: 6px auto;
-`;
+  const Tooltip0 = styled.div`
+    border-radius: 4px;
+    height: 22px;
+    background-color: #b600ff;
+    position: absolute;
+    margin: 23% 0 0 3rem;
+    box-shadow: 3px 2px 4px 0px #0000002e;
+  `;
 
+  const Tooltip1 = styled.div`
+    border-radius: 4px;
+    height: 22px;
+    background-color: #4cb80d;
+    position: absolute;
+    margin: 23% 0 0 3rem;
+    box-shadow: 3px 2px 4px 0px #0000002e;
+  `;
 
+  const Tooltip2 = styled.div`
+    border-radius: 4px;
+    height: 22px;
+    background-color: #08b6fa;
+    position: absolute;
+    margin: 23% 0 0 3rem;
+    box-shadow: 3px 2px 4px 0px #0000002e;
+  `;
+
+  const Tooltip3 = styled.div`
+    border-radius: 4px;
+    height: 23px;
+    background-color: #000000;
+    position: absolute;
+    margin: 23% 0 0 3rem;
+    box-shadow: 3px 2px 4px 0px #0000002e;
+  `;
+
+  const Tooltip4 = styled.div`
+    border-radius: 4px;
+    height: 23px;
+    background-color: #000000;
+    position: absolute;
+    margin: 23% 0 0 3rem;
+    box-shadow: 3px 2px 4px 0px #0000002e;
+  `;
+
+  const Tooltip5 = styled.div`
+    border-radius: 4px;
+    height: 23px;
+    background-color: #e2a00e;
+    position: absolute;
+    margin: 23% 0 0 3rem;
+    box-shadow: 3px 2px 4px 0px #0000002e;
+  `;
+
+  const Text = styled.span`
+    color: #ffffff;
+    padding: 0 9px;
+  `;
+
+  const Divisa = styled.div`
+    border-bottom: solid 2px #e2e2e2;
+    width: 24px;
+    margin: 6px auto;
+  `;
+
+  const CheckBoxWrapper = styled.div`
+    position: relative;
+  `;
+  const CheckBoxLabel = styled.label`
+    position: absolute;
+    top: 0;
+    left: 0;
+    margin: 6px;
+    width: 27px;
+    height: 15px;
+    border-radius: 15px;
+    background: #bebebe;
+    cursor: pointer;
+    &::after {
+      content: "";
+      display: block;
+      border-radius: 50%;
+      width: 9px;
+      height: 9px;
+      margin: 3px;
+      background: #ffffff;
+      box-shadow: 1px 3px 3px 1px rgba(0, 0, 0, 0.2);
+      transition: 0.5s;
+    }
+  `;
+
+  const CheckBox = styled.input`
+    opacity: 0;
+    z-index: 1;
+    border-radius: 15px;
+    background: #4e5579;
+    width: 21px;
+    height: 15px;
+    &:checked + ${CheckBoxLabel} {
+      background: #4e5579;
+      &::after {
+        content: "";
+        display: block;
+        border-radius: 50%;
+        width: 9px;
+        height: 9px;
+        margin-left: 15px;
+        transition: 0.1s;
+        background: #ffffff;
+      }
+    }
+  `;
+
+  const Theme = theme ? Night : Day;
 
   return (
     <NavStyle>
@@ -250,6 +315,19 @@ const Divisa = styled.div`
               onClick={e => setHidden5(true)}
             />
           </Link>
+        </div>
+        <Divisa />
+        <div>
+          <Theme onClick={props.handleChange}/>
+          <CheckBoxWrapper>
+            <CheckBox
+              id="checkbox"
+              checked={theme}
+              onChange={props.handleChange}
+              type="checkbox"
+            />
+            <CheckBoxLabel htmlFor="checkbox" />
+          </CheckBoxWrapper>
         </div>
       </div>
     </NavStyle>

@@ -5,7 +5,6 @@ import CardToRepos from "../components/cardsToRepos";
 import { API } from "../api";
 
 const Repos = props => {
-  console.log(props);
   const [name, setName] = useState("");
 
   useEffect(() => {

@@ -6,6 +6,7 @@ export const SkeletonCardToRepos = props => {
   const Card = styled.div`
     background-color: ${theme ? "#252839" : "#ececec"};
     height: 8rem;
+    transition: 0.5s;
     border-radius: 7px;
     margin: 7px;
     -webkit-animation: flickerAnimation 1s infinite;
@@ -98,6 +99,7 @@ export const SkeletonCardToGists = props => {
   const theme = Boolean(props.theme);
   const Card = styled.div`
     background-color: ${theme ? "#252839" : "#ececec"};
+    transition: 0.5s;
     height: 1.5rem;
     width: 90%;
     border-radius: 5px;

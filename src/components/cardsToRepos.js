@@ -19,9 +19,10 @@ const CardsToRepos = props => {
     border: solid 1px ${theme ? "none" : "#cecece"};
     height: 8rem;
     border-radius: 7px;
+    transition: 0.5s;
     margin: 7px;
     box-shadow: ${theme
-      ? "inset 0 2px 11px 0px #a3a5aa"
+      ? "inset 0 2px 11px 0px rgba(255, 255, 255, 0.2)"
       : "3px 2px 4px 0px #0000002e"};
   `;
 
@@ -29,6 +30,7 @@ const CardsToRepos = props => {
     border-top-left-radius: 7px;
     border-top-right-radius: 7px;
     background-color: ${theme ? "#d1d2d433" : "#000000"};
+    transition: 0.5s;
     height: 3rem;
     box-shadow: ${theme ? "none" : "0px 11px 10px -7px #15151570"};
   `;
@@ -50,23 +52,23 @@ const CardsToRepos = props => {
     float: right;
   `;
   const CardBody = styled.div`
-    border-bottom-left-radius: 7px;
-    border-bottom-right-radius: 7px;
+    margin: 19px 0;
     display: flex;
   `;
 
   const Icon = styled(FileCode)`
-    width: 38px;
+    width: 20px;
     color: #000;
-    padding: 15px;
-    color: ${theme ?  "#FFF" : "#000"};
+    padding: 7px;
+    color: ${theme ? "#FFF" : "#000"};
+    transition: 0.5s;
   `;
 
   const Text = styled.span`
-    height: 29px;
-    padding: 30px 0 20px 0;
-    font-size: 15px;
+    align-self: center;
+    font-size: 13px;
     color: ${theme ? "#FFF" : "#000"};
+    transition: 0.5s;
   `;
 
   const Col = styled.div`

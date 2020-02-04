@@ -9,6 +9,7 @@ const CardResume = props => {
     height: auto;
     border-radius: 7px;
     margin: 7px;
+    transition: 0.5s;
     box-shadow: 3px 2px 4px 0px ${theme ? "none" : "#0000002e"};
   `;
 
@@ -16,6 +17,7 @@ const CardResume = props => {
     border-top-left-radius: 7px;
     border-top-right-radius: 7px;
     background-color: ${theme ? "#2e3348" : "#a059ff"};
+    transition: 0.5s;
     padding: 10px;
   `;
 
@@ -29,6 +31,7 @@ const CardResume = props => {
     font-size: 16px;
     margin: 1rem;
     color: ${theme ? "#e4e4e4" : "#ffffff"};
+    transition: 0.5s;
     font-weight: bold;
   `;
 
@@ -36,6 +39,7 @@ const CardResume = props => {
     font-size: 16px;
     margin: 1rem;
     color: ${theme ? "#e4e4e4" : "#000000"};
+    transition: 0.5s;
   `;
 
   const Col = styled.div`

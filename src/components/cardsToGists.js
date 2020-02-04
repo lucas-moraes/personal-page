@@ -21,6 +21,7 @@ const CardToGists = props => {
     margin: auto 0;
     width: 100%;
     color: ${theme ? "#fff" : "#000"};
+    transition: 0.5s;
   `;
   const Link = styled.a`
     text-decoration: none;
