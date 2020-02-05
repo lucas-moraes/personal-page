@@ -41,6 +41,7 @@ build/Release
 node_modules/
 build/
 src/token/
+public/
 jspm_packages/
 
 # TypeScript v1 declaration files

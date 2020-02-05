@@ -20,7 +20,7 @@ const GlobalStyle = createGlobalStyle`
 `;
 
 const App = (props) => {
-  const[Default, setDefault] = useState(true);
+  const[Default, setDefault] = useState(false);
 
   useEffect(() => {
     const d = new Date();
