@@ -7,7 +7,7 @@ import { API } from "../api";
 const Gists = (props) => {
   const [name, setName] = useState("vazio");
   useEffect(() => {
-    const gist = `query { viewer { gists(first:100 privacy:PUBLIC){ nodes{ description url } } } }`;
+    const gist = `query { viewer { gists(first:100 privacy:PUBLIC orderBy:{field: CREATED_AT, direction: DESC}){ nodes{ description url } } } }`;
 
     API(gist)
       .then(res => res.text())
