@@ -26,7 +26,7 @@ const App = (props) => {
     const d = new Date();
     const h = d.getHours();
 
-    if(h > 18){
+    if(h > 18 || h < 5){
       setDefault(true)
     } else {
       setDefault(false)
