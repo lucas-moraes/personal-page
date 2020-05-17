@@ -8,7 +8,7 @@ const Repos = props => {
   const [name, setName] = useState("");
 
   useEffect(() => {
-    const repo = `query{ viewer{ repositories(first:100 isFork:false privacy:PUBLIC orderBy:{field: CREATED_AT, direction: DESC}){ nodes{ name } } } }`;
+    const repo = `query{ viewer{ repositories(first:100, isFork:false, ownerAffiliations: OWNER,privacy:PUBLIC, orderBy:{field: CREATED_AT, direction: DESC}){ nodes{ name } } } }`;
     API(repo)
       .then(res => res.text())
       .then(body => {
