@@ -1,11 +1,15 @@
-import React from "react";
+import React, { FunctionComponent } from "react";
 import styled from "styled-components";
 import CardResume from "../components/cardResume";
 import CardResumeExtra from "../components/cardResumeExtra";
 import CardSkills from "../components/cardSkills";
 
-const Home = props => {
-  const theme = Boolean(props.theme);
+interface HomeProps {
+  theme: boolean;
+}
+
+const Home: FunctionComponent<HomeProps> = props => {
+  const theme = Boolean( props.theme );
   const LabelTwo = styled.div`
     padding-left: 3rem;
     padding-top: 3rem;
@@ -76,11 +80,11 @@ const Home = props => {
     <LabelTwo>
       <Row>
         <Col1>
-          <CardResume theme={theme} />
-          <CardResumeExtra theme={theme} />
+          <CardResume theme={ theme } />
+          <CardResumeExtra theme={ theme } />
         </Col1>
         <Col2>
-          <CardSkills theme={theme} />
+          <CardSkills theme={ theme } />
         </Col2>
       </Row>
     </LabelTwo>

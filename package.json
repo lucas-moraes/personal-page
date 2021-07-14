@@ -9,6 +9,15 @@
   ],
   "main": "src/index.js",
   "dependencies": {
+    "@types/babel__traverse": "^7.0.6",
+    "@types/node": "^16.3.1",
+    "@types/react": "^17.0.14",
+    "@types/react-dom": "^17.0.8",
+    "@types/react-router-dom": "^5.1.7",
+    "@types/styled-components": "^5.1.10",
+    "@typescript-eslint/eslint-plugin": "^4.28.1",
+    "eslint-config-airbnb": "^18.2.1",
+    "eslint-plugin-react": "^7.19.0",
     "react": "16.8.6",
     "react-dom": "16.8.6",
     "react-router-dom": "5.1.2",
@@ -17,6 +26,11 @@
     "styled-icons": "8.4.2"
   },
   "devDependencies": {
+    "eslint": "^5.16.0",
+    "eslint-config-prettier": "^8.3.0",
+    "eslint-import-resolver-typescript": "^2.4.0",
+    "eslint-plugin-prettier": "^3.4.0",
+    "prettier": "^2.3.2",
     "terser-brunch": "^4.0.0",
     "typescript": "3.3.3"
   },

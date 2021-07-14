@@ -40,9 +40,11 @@ build/Release
 # Dependency directories
 node_modules/
 build/
+buildDefault/
 src/token/
 public/
 jspm_packages/
+src/token/
 
 # TypeScript v1 declaration files
 typings/

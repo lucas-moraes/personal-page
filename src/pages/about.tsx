@@ -1,23 +1,27 @@
-import React from "react";
+import React, { FunctionComponent } from "react";
 import styled from "styled-components";
 import { RightArrowAlt } from "styled-icons/boxicons-regular/RightArrowAlt";
 
-const About = props => {
-  const theme = Boolean(props.theme);
+type AboutProps = {
+  theme: boolean;
+};
+
+const About: FunctionComponent<AboutProps> = props => {
+  const theme = Boolean( props.theme );
   const LabelTwo = styled.div`
     padding-left: 3rem;
     padding-top: 3rem;
   `;
 
   const Text = styled.p`
-    color: ${theme ? "#fff" : "#040404"};
+    color: ${ theme ? "#fff" : "#040404" };
     font-size: 15px;
     margin: auto 0;
     width: 100%;
     padding-left: 7px;
   `;
 
-  const Tag = styled(RightArrowAlt)`
+  const Tag = styled( RightArrowAlt )`
     color: #0088ff;
     width: 26px;
     align-self: start;
@@ -89,7 +93,7 @@ const About = props => {
       <Col>
         <Text>
           Este projeto foi desenvolvido com o intuito de ser currículum e
-          portifólio online para desenveolvedores.
+          portifólio online para desenvolvedores.
         </Text>
         <Text>
           Totalmente Open Source, o projeto deverá ser ajustado e melhorado ao
@@ -102,19 +106,23 @@ const About = props => {
           <Text>As tecnologias utilizadas para esse projeto foram:</Text>
           <br />
 
-          <div style={{ width: "100%", display: "Flex" }}>
+          <div style={ { width: "100%", display: "Flex" } }>
             <Tag />
             <Text>ReactJS</Text>
           </div>
-          <div style={{ width: "100%", display: "Flex" }}>
+          <div style={ { width: "100%", display: "Flex" } }>
             <Tag />
-            <Text>React Router Dom</Text>
+            <Text>TypeScript</Text>
           </div>
-          <div style={{ width: "100%", display: "Flex" }}>
+          <div style={ { width: "100%", display: "Flex" } }>
+            <Tag />
+            <Text>GraphQL</Text>
+          </div>
+          <div style={ { width: "100%", display: "Flex" } }>
             <Tag />
             <Text>Styled components</Text>
           </div>
-          <div style={{ width: "100%", display: "Flex" }}>
+          <div style={ { width: "100%", display: "Flex" } }>
             <Tag />
             <Text>Styled Icons</Text>
           </div>

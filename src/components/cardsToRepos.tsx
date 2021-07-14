@@ -1,51 +1,56 @@
-import React from "react";
+import React, { FunctionComponent } from "react";
 import styled from "styled-components";
 import { ScGithub } from "styled-icons/evil/ScGithub";
 import { LogoGithub } from "styled-icons/octicons/LogoGithub";
 import { FileCode } from "styled-icons/fa-regular/FileCode";
 import { Eye } from "styled-icons/fa-regular/Eye";
 
-const CardsToRepos = props => {
-  const theme = Boolean(props.theme);
-  function generateRandomColor() {
-    let r = Math.round(Math.random() * 255);
-    let g = Math.round(Math.random() * 255);
-    let b = Math.round(Math.random() * 255);
+interface CardsToReposProps {
+  theme: boolean,
+  text: string;
+}
+
+const CardsToRepos: FunctionComponent<CardsToReposProps> = props => {
+  const theme = Boolean( props.theme );
+  function generateRandomColor () {
+    let r = Math.round( Math.random() * 255 );
+    let g = Math.round( Math.random() * 255 );
+    let b = Math.round( Math.random() * 255 );
     return "rgb(" + r + ", " + g + ", " + b + ", " + 0.3 + ")";
   }
 
   const Card = styled.div`
-    background-color: ${props => generateRandomColor()};
-    border: solid 1px ${theme ? "none" : "#cecece"};
+    background-color: ${ props => generateRandomColor() };
+    border: solid 1px ${ theme ? "none" : "#cecece" };
     height: 8rem;
     border-radius: 7px;
     transition: 0.5s;
     margin: 7px;
-    box-shadow: ${theme
+    box-shadow: ${ theme
       ? "inset 0 2px 11px 0px rgba(255, 255, 255, 0.2)"
-      : "3px 2px 4px 0px #0000002e"};
+      : "3px 2px 4px 0px #0000002e" };
   `;
 
   const CardHeader = styled.div`
     border-top-left-radius: 7px;
     border-top-right-radius: 7px;
-    background-color: ${theme ? "#d1d2d433" : "#000000"};
+    background-color: ${ theme ? "#d1d2d433" : "#000000" };
     transition: 0.5s;
     height: 3rem;
-    box-shadow: ${theme ? "none" : "0px 11px 10px -7px #15151570"};
+    box-shadow: ${ theme ? "none" : "0px 11px 10px -7px #15151570" };
   `;
 
-  const GitLogo = styled(ScGithub)`
+  const GitLogo = styled( ScGithub )`
     width: 50px;
     color: #fff;
   `;
 
-  const GitText = styled(LogoGithub)`
+  const GitText = styled( LogoGithub )`
     width: 50px;
     color: #fff;
   `;
 
-  const See = styled(Eye)`
+  const See = styled( Eye )`
     width: 31px;
     color: #56ff00;
     margin: 10px;
@@ -56,18 +61,18 @@ const CardsToRepos = props => {
     display: flex;
   `;
 
-  const Icon = styled(FileCode)`
+  const Icon = styled( FileCode )`
     width: 20px;
     color: #000;
     padding: 7px;
-    color: ${theme ? "#FFF" : "#000"};
+    color: ${ theme ? "#FFF" : "#000" };
     transition: 0.5s;
   `;
 
   const Text = styled.span`
     align-self: center;
     font-size: 13px;
-    color: ${theme ? "#FFF" : "#000"};
+    color: ${ theme ? "#FFF" : "#000" };
     transition: 0.5s;
   `;
 
@@ -102,20 +107,20 @@ const CardsToRepos = props => {
   return (
     <>
       <Col>
-        <Card random>
+        <Card>
           <CardHeader>
             <GitLogo />
             <GitText />
             <a
-              href={`https://github.com/lucas-moraes/${props.text}`}
-              target={"_blank"}
+              href={ `https://github.com/lucas-moraes/${ props.text }` }
+              target={ "_blank" }
             >
               <See />
             </a>
           </CardHeader>
           <CardBody>
             <Icon />
-            <Text>{props.text}</Text>
+            <Text>{ props.text }</Text>
           </CardBody>
         </Card>
       </Col>

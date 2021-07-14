@@ -1,16 +1,22 @@
-import React from "react";
+import React, { FunctionComponent } from "react";
 import styled from "styled-components";
 import { FileJs } from "styled-icons/boxicons-solid/FileJs";
 
-const CardToGists = props => {
-  const theme = Boolean(props.theme);
+interface CardToGistsProps {
+  theme: boolean,
+  url: string,
+  description: string;
+}
+
+const CardToGists: FunctionComponent<CardToGistsProps> = props => {
+  const theme = Boolean( props.theme );
   const Card = styled.div`
     display: flex;
     width: 100%;
     margin: 5px 0;
   `;
 
-  const JS = styled(FileJs)`
+  const JS = styled( FileJs )`
     width: 27px;
     color: #ffc800;
   `;
@@ -20,7 +26,7 @@ const CardToGists = props => {
     font-size: 12px;
     margin: auto 0;
     width: 100%;
-    color: ${theme ? "#fff" : "#000"};
+    color: ${ theme ? "#fff" : "#000" };
     transition: 0.5s;
   `;
   const Link = styled.a`
@@ -32,8 +38,8 @@ const CardToGists = props => {
   return (
     <Card>
       <JS />
-      <Link href={props.url} target={"_blank"}>
-        <Text>{props.description}</Text>
+      <Link href={ props.url } target={ "_blank" }>
+        <Text>{ props.description }</Text>
       </Link>
     </Card>
   );

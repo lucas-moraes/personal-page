@@ -1,15 +1,22 @@
-import React from "react";
+import React, { FunctionComponent } from "react";
 import styled, { keyframes } from "styled-components";
 
-export const CardChart = props => {
-  const theme = Boolean(props.theme);
+interface CardChartProps {
+  theme: boolean,
+  text: string,
+  score: number,
+  scoreColor: string,
+}
+
+export const CardChart: FunctionComponent<CardChartProps> = props => {
+  const theme = Boolean( props.theme );
   let perc = props.score * 10;
   let size = 50;
   let width = 10;
   let ScoreColor = props.scoreColor;
   let ShadowScoreColor = props.scoreColor;
 
-  let deg = (perc / 100) * 360 + "deg";
+  let deg = ( perc / 100 ) * 360 + "deg";
 
   const Card = styled.div`
     float: left;
@@ -49,18 +56,18 @@ export const CardChart = props => {
     }
 
     100% {
-      -webkit-transform: rotate(${deg});
+      -webkit-transform: rotate(${ deg });
     }
   }
   `;
 
   const DonutChart = styled.div`
-    width: ${size}px;
-    height: ${size}px;
-    background: ${theme ? "#252839" : "#f5f5f5"};
+    width: ${ size }px;
+    height: ${ size }px;
+    background: ${ theme ? "#252839" : "#f5f5f5" };
     position: relative;
     border-radius: 50%;
-    -webkit-animation: ${DonutChartAnimation};
+    -webkit-animation: ${ DonutChartAnimation };
   `;
 
   const QuadOneAnimation = keyframes`
@@ -70,23 +77,23 @@ export const CardChart = props => {
   }
   
   100% {
-    -webkit-transform: rotate(${deg});
+    -webkit-transform: rotate(${ deg });
   }
   `;
 
   const QuadOne = styled.div`
-    width: ${size / 2}px;
-    height: ${size / 2}px;
+    width: ${ size / 2 }px;
+    height: ${ size / 2 }px;
     top: 0;
     left: 0;
     border-radius: 100% 0 0 0;
-    background: ${ScoreColor};
-    box-shadow: 0px 0px 11px 0px ${ShadowScoreColor}
+    background: ${ ScoreColor };
+    box-shadow: 0px 0px 11px 0px ${ ShadowScoreColor }
     position: absolute;
-    -webkit-transform: rotate(${deg});
+    -webkit-transform: rotate(${ deg });
     -webkit-transform-origin: bottom right;
-    -webkit-animation: ${QuadOneAnimation} 1.5s linear;
-    display: ${perc > 0 ? "block" : "none"};
+    -webkit-animation: ${ QuadOneAnimation } 1.5s linear;
+    display: ${ perc > 0 ? "block" : "none" };
   `;
 
   const QuadTwoAnimation = keyframes`
@@ -100,18 +107,18 @@ export const CardChart = props => {
   }
   `;
   const QuadTwo = styled.div`
-    width: ${size / 2}px;
-    height: ${size / 2}px;
+    width: ${ size / 2 }px;
+    height: ${ size / 2 }px;
     top: 0;
     left: 0;
     border-radius: 100% 0 0 0;
-    background: ${ScoreColor};
-    box-shadow: 0px 0px 11px 0px ${ShadowScoreColor}
+    background: ${ ScoreColor };
+    box-shadow: 0px 0px 11px 0px ${ ShadowScoreColor }
     position: absolute;
     -webkit-transform: rotate(90deg);
     -webkit-transform-origin: bottom right;
-    -webkit-animation: ${QuadTwoAnimation} 1.5s linear;
-    display: ${perc > 25 ? "block" : "none"};
+    -webkit-animation: ${ QuadTwoAnimation } 1.5s linear;
+    display: ${ perc > 25 ? "block" : "none" };
   `;
 
   const QuadThreeAnimation = keyframes`
@@ -125,18 +132,18 @@ export const CardChart = props => {
   }
   `;
   const QuadThree = styled.div`
-    width: ${size / 2}px;
-    height: ${size / 2}px;
+    width: ${ size / 2 }px;
+    height: ${ size / 2 }px;
     top: 0;
     left: 0;
     border-radius: 100% 0 0 0;
-    background: ${ScoreColor};
-    box-shadow: 0px 0px 11px 0px ${ShadowScoreColor}
+    background: ${ ScoreColor };
+    box-shadow: 0px 0px 11px 0px ${ ShadowScoreColor }
     position: absolute;
     -webkit-transform: rotate(180deg);
     -webkit-transform-origin: bottom right;
-    -webkit-animation: ${QuadThreeAnimation} 1.5s linear;
-    display: ${perc > 50 ? "block" : "none"};
+    -webkit-animation: ${ QuadThreeAnimation } 1.5s linear;
+    display: ${ perc > 50 ? "block" : "none" };
   `;
 
   const QuadFourAnimation = keyframes`
@@ -150,18 +157,18 @@ export const CardChart = props => {
   }
   `;
   const QuadFour = styled.div`
-    width: ${size / 2}px;
-    height: ${size / 2}px;
+    width: ${ size / 2 }px;
+    height: ${ size / 2 }px;
     top: 0;
     left: 0;
     border-radius: 100% 0 0 0;
-    background: ${ScoreColor};
-    box-shadow: 0px 0px 11px 0px ${ShadowScoreColor};
+    background: ${ ScoreColor };
+    box-shadow: 0px 0px 11px 0px ${ ShadowScoreColor };
     position: absolute;
     -webkit-transform: rotate(270deg);
     -webkit-transform-origin: bottom right;
-    -webkit-animation: ${QuadFourAnimation} 1.5s linear;
-    display: ${perc > 75 ? "block" : "none"};
+    -webkit-animation: ${ QuadFourAnimation } 1.5s linear;
+    display: ${ perc > 75 ? "block" : "none" };
   `;
 
   const ChartCover = keyframes`
@@ -176,53 +183,53 @@ export const CardChart = props => {
   }
   `;
   const QuadTop = styled.div`
-    width: ${size / 2}px;
-    height: ${size / 2}px;
+    width: ${ size / 2 }px;
+    height: ${ size / 2 }px;
     top: 0;
     left: 0;
     border-radius: 100% 0 0 0;
     display: block;
     position: absolute;
-    background: ${theme ? "#252839" : "#f5f5f5"};
-    -webkit-animation: ${perc > 75 ? ChartCover : ""};
+    background: ${ theme ? "#252839" : "#f5f5f5" };
+    -webkit-animation: ${ perc > 75 ? ChartCover : "" };
     box-shadow: 0px 0px 11px 2px
-      ${theme ? "#252839" : "#ffffff"};
-    opacity: ${perc > 75 ? 0 : ""};
+      ${ theme ? "#252839" : "#ffffff" };
+    opacity: ${ perc > 75 ? 0 : "" };
   `;
 
   const ChartCenter = styled.div`
-    top: ${width}px;
-    left: ${width}px;
-    width: ${size - width * 2}px;
-    height: ${size - width * 2}px;
-    background: ${theme ? "#252839" : "#ffffff"};
+    top: ${ width }px;
+    left: ${ width }px;
+    width: ${ size - width * 2 }px;
+    height: ${ size - width * 2 }px;
+    background: ${ theme ? "#252839" : "#ffffff" };
     position: absolute;
     border-radius: 50%;
 
     &:after {
       display: inline-block;
       width: 100%;
-      font-size: ${size / 3}px;
-      color: ${theme ? "#ffffff" : "#252839"}; 
+      font-size: ${ size / 3 }px;
+      color: ${ theme ? "#ffffff" : "#252839" }; 
       text-align: center;
-      line-height: ${size - width * 2}px;
-      content: "${perc / 10}";
+      line-height: ${ size - width * 2 }px;
+      content: "${ perc / 10 }";
     }
   `;
   const Text = styled.span`
     align-self: center;
     padding: 2px 0 0 11px;
-    border-bottom: solid 2px ${ScoreColor};
-    border-left: solid 2px ${ScoreColor};
-    border-top: solid 2px ${ScoreColor};
+    border-bottom: solid 2px ${ ScoreColor };
+    border-left: solid 2px ${ ScoreColor };
+    border-top: solid 2px ${ ScoreColor };
     border-radius: 10px 0 0 10px;
-    color: ${theme ? "#ffffff" : "#252839"};
+    color: ${ theme ? "#ffffff" : "#252839" };
     width: 80%;
   `;
 
   return (
     <Card>
-      <Text>{props.text}</Text>
+      <Text>{ props.text }</Text>
       <DonutChart>
         <QuadOne />
         <QuadTwo />

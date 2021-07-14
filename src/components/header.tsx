@@ -1,8 +1,12 @@
-import React from "react";
+import React, { FunctionComponent } from "react";
 import styled from "styled-components";
 
-const LabelHeader = props => {
-  const theme = Boolean(props.theme);
+type LabelHeaderProps = {
+  theme: boolean;
+};
+
+const LabelHeader: FunctionComponent<LabelHeaderProps> = ( props ) => {
+  const theme = props.theme;
   const Label = styled.div`
     z-index: -1;
     margin-left: 45px;
@@ -15,7 +19,7 @@ const LabelHeader = props => {
   const LabelOne = styled.div`
     @import url("https://fonts.googleapis.com/css?family=Lato&display=swap");
     padding-left: 7px;
-    color: ${theme ? "#e4e4e4" : "#000000"};
+    color: ${ theme ? "#e4e4e4" : "#000000" };
     font-family: "Lato", sans-serif;
     font-size: 25px;
     margin-bottom: 1.5rem;

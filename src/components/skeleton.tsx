@@ -1,10 +1,14 @@
-import React from "react";
+import React, { FunctionComponent } from "react";
 import styled from "styled-components";
 
-export const SkeletonCardToRepos = props => {
-  const theme = Boolean(props.theme);
+interface SkeletonCardsProps {
+  theme: boolean;
+}
+
+export const SkeletonCardToRepos: FunctionComponent<SkeletonCardsProps> = props => {
+  const theme = Boolean( props.theme );
   const Card = styled.div`
-    background-color: ${theme ? "#252839" : "#ececec"};
+    background-color: ${ theme ? "#252839" : "#ececec" };
     height: 8rem;
     transition: 0.5s;
     border-radius: 7px;
@@ -89,16 +93,16 @@ export const SkeletonCardToRepos = props => {
   `;
 
   return (
-    <Col style={{ padding: 0, zIndex: -1 }}>
+    <Col style={ { padding: 0, zIndex: -1 } }>
       <Card />
     </Col>
   );
 };
 
-export const SkeletonCardToGists = props => {
-  const theme = Boolean(props.theme);
+export const SkeletonCardToGists: FunctionComponent<SkeletonCardsProps> = props => {
+  const theme = Boolean( props.theme );
   const Card = styled.div`
-    background-color: ${theme ? "#252839" : "#ececec"};
+    background-color: ${ theme ? "#252839" : "#ececec" };
     transition: 0.5s;
     height: 1.5rem;
     width: 90%;
