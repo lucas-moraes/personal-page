@@ -48,7 +48,7 @@ until finished
 
 ## Author
 
-* **Lucas Moraes** - *Initial work* - [Personal-page](https://github.com/lucas-moraes/personal-page)
+* **Lucas Moraes** - *Initial work* - [Personal-page](http://lucas-moraes.surge.sh)
 
 ## License
 
