@@ -37,7 +37,10 @@ const CardToGists: FunctionComponent<CardToGistsProps> = props => {
 
   return (
     <Card>
-      <JS />
+      <div>
+        <JS />
+      </div>
+
       <Link href={ props.url } target={ "_blank" }>
         <Text>{ props.description }</Text>
       </Link>

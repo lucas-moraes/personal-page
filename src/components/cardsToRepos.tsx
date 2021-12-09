@@ -119,7 +119,9 @@ const CardsToRepos: FunctionComponent<CardsToReposProps> = props => {
             </a>
           </CardHeader>
           <CardBody>
-            <Icon />
+            <div>
+              <Icon />
+            </div>
             <Text>{ props.text }</Text>
           </CardBody>
         </Card>
