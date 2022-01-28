@@ -13,7 +13,27 @@ const Repos: FunctionComponent<ReposProps> = ( props ) => {
   const [ project, setProject ] = useState<Array<any>>( [] );
 
   useEffect( () => {
-    const repo = `query{ viewer{ repositories(first:100, isFork:false, ownerAffiliations: OWNER,privacy:PUBLIC, orderBy:{field: CREATED_AT, direction: DESC}){ nodes{ name } } } }`;
+    const repo = `query{ 
+      viewer{ 
+        repositories(
+          first:100, 
+          isFork:false, 
+          ownerAffiliations: OWNER,
+          privacy:PUBLIC, 
+          orderBy:{
+            field: CREATED_AT, 
+            direction: DESC
+          }
+        ){
+          nodes{ 
+            name,
+            primaryLanguage {
+              name
+            }        
+          } 
+        } 
+      } 
+    }`;
     API( repo )
       .then( res => res.text() )
       .then( body => {
@@ -51,7 +71,7 @@ const Repos: FunctionComponent<ReposProps> = ( props ) => {
         { project.length <= 0 ? (
           <Loading />
         ) : (
-          project.map( ( text, i = 1 ) => ( <CardToRepos { ...props } key={ i++ } text={ text.name } /> ) )
+          project.map( ( text, i = 1 ) => ( <CardToRepos { ...props } key={ i++ } text={ text.name } language={ text.primaryLanguage.name } /> ) )
         ) }
       </Row>
     </LabelTwo>

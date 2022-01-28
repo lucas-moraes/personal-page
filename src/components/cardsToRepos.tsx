@@ -3,11 +3,13 @@ import styled from "styled-components";
 import { ScGithub } from "styled-icons/evil/ScGithub";
 import { LogoGithub } from "styled-icons/octicons/LogoGithub";
 import { FileCode } from "styled-icons/fa-regular/FileCode";
+import { Code } from "styled-icons/fa-solid/Code";
 import { Eye } from "styled-icons/fa-regular/Eye";
 
 interface CardsToReposProps {
   theme: boolean,
-  text: string;
+  text: string,
+  language: string;
 }
 
 const CardsToRepos: FunctionComponent<CardsToReposProps> = props => {
@@ -21,14 +23,17 @@ const CardsToRepos: FunctionComponent<CardsToReposProps> = props => {
 
   const Card = styled.div`
     background-color: ${ props => generateRandomColor() };
-    border: solid 1px ${ theme ? "none" : "#cecece" };
-    height: 8rem;
+    border: solid 1px ${ theme ? "transparent" : "#cecece" };
+    height: 120px;
     border-radius: 7px;
-    transition: 0.5s;
+    transition: 0.2s;
     margin: 7px;
     box-shadow: ${ theme
-      ? "inset 0 2px 11px 0px rgba(255, 255, 255, 0.2)"
+      ? "0 2px 11px 0px rgba(0, 0, 0)"
       : "3px 2px 4px 0px #0000002e" };
+    &:hover {
+      transform: scale(1.05);
+      }
   `;
 
   const CardHeader = styled.div`
@@ -57,7 +62,7 @@ const CardsToRepos: FunctionComponent<CardsToReposProps> = props => {
     float: right;
   `;
   const CardBody = styled.div`
-    margin: 19px 0;
+    margin: 0 10px;
     display: flex;
   `;
 
@@ -69,9 +74,17 @@ const CardsToRepos: FunctionComponent<CardsToReposProps> = props => {
     transition: 0.5s;
   `;
 
+  const IconCode = styled( Code )`
+  width: 20px;
+  color: #000;
+  padding: 1px 7px;
+  color: ${ theme ? "#FFF" : "#000" };
+  transition: 0.5s;
+`;
+
   const Text = styled.span`
     align-self: center;
-    font-size: 13px;
+    font-size: 12px;
     color: ${ theme ? "#FFF" : "#000" };
     transition: 0.5s;
   `;
@@ -107,24 +120,31 @@ const CardsToRepos: FunctionComponent<CardsToReposProps> = props => {
   return (
     <>
       <Col>
-        <Card>
-          <CardHeader>
-            <GitLogo />
-            <GitText />
-            <a
-              href={ `https://github.com/lucas-moraes/${ props.text }` }
-              target={ "_blank" }
-            >
+        <a
+          style={ { textDecoration: 'none' } }
+          href={ `https://github.com/lucas-moraes/${ props.text }` }
+          target={ "_blank" }
+        >
+          <Card>
+            <CardHeader>
+              <GitLogo />
+              <GitText />
               <See />
-            </a>
-          </CardHeader>
-          <CardBody>
-            <div>
-              <Icon />
-            </div>
-            <Text>{ props.text }</Text>
-          </CardBody>
-        </Card>
+            </CardHeader>
+            <CardBody>
+              <div>
+                <Icon />
+              </div>
+              <Text>{ props.text }</Text>
+            </CardBody>
+            <CardBody>
+              <div>
+                <IconCode />
+              </div>
+              <Text>{ props.language }</Text>
+            </CardBody>
+          </Card>
+        </a>
       </Col>
     </>
   );
