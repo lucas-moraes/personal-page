@@ -115,7 +115,7 @@ const CardResumeExtra: FunctionComponent<CardResumeExtraProps> = props => {
             <div style={ { width: "100%", display: "Flex", marginTop: "10px" } }>
               <Tag />
               <TextToBody>
-                <b>Ultimos estudos:</b> TypeScript com ReactJS, SQL Server, AngularJS
+                <b>Ultimos estudos:</b> TypeScript com ReactJS, SQL Server, Python
               </TextToBody>
             </div>
           </CardBody>

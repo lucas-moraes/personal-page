@@ -143,6 +143,12 @@ const CardSkills: FunctionComponent<CardSkillsProps> = props => {
               score={ 5 }
               scoreColor={ "#faa179" }
             />
+            <CardChart
+              { ...props }
+              text={ "Python" }
+              score={ 5 }
+              scoreColor={ "#ff93ac" }
+            />
           </CardBody>
         </Card>
       </Col>
