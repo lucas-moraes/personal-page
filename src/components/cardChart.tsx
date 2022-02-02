@@ -64,7 +64,7 @@ export const CardChart: FunctionComponent<CardChartProps> = props => {
   const DonutChart = styled.div`
     width: ${ size }px;
     height: ${ size }px;
-    background: ${ theme ? "#252839" : "#f5f5f5" };
+    background: ${ theme ? "#383c51" : "#f5f5f5" };
     position: relative;
     border-radius: 50%;
     -webkit-animation: ${ DonutChartAnimation };
@@ -190,10 +190,10 @@ export const CardChart: FunctionComponent<CardChartProps> = props => {
     border-radius: 100% 0 0 0;
     display: block;
     position: absolute;
-    background: ${ theme ? "#252839" : "#f5f5f5" };
+    background: ${ theme ? "#383c51" : "#f5f5f5" };
     -webkit-animation: ${ perc > 75 ? ChartCover : "" };
     box-shadow: 0px 0px 11px 2px
-      ${ theme ? "#252839" : "#ffffff" };
+      ${ theme ? "#383c51" : "#ffffff" };
     opacity: ${ perc > 75 ? 0 : "" };
   `;
 
@@ -210,7 +210,7 @@ export const CardChart: FunctionComponent<CardChartProps> = props => {
       display: inline-block;
       width: 100%;
       font-size: ${ size / 3 }px;
-      color: ${ theme ? "#ffffff" : "#252839" }; 
+      color: ${ theme ? "#ffffff" : "#383c51" }; 
       text-align: center;
       line-height: ${ size - width * 2 }px;
       content: "${ perc / 10 }";
@@ -223,7 +223,7 @@ export const CardChart: FunctionComponent<CardChartProps> = props => {
     border-left: solid 2px ${ ScoreColor };
     border-top: solid 2px ${ ScoreColor };
     border-radius: 10px 0 0 10px;
-    color: ${ theme ? "#ffffff" : "#252839" };
+    color: ${ theme ? "#ffffff" : "#383c51" };
     width: 80%;
   `;
 
