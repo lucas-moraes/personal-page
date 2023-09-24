@@ -1,51 +1,32 @@
 {
-  "name": "personal-page",
-  "author": "Lucas Moraes",
-  "version": "2.0.0",
-  "description": "For the Developer who doesn't want to spend time building a website / portfolio, or wanted a template to start, this project can help you ;)",
-  "keywords": [
-    "reactjs",
-    "styled-components"
-  ],
-  "main": "src/index.js",
+  "name": "personal-page-2",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "bunx --bun vite",
+    "build": "tsc && vite build && && copyfiles *.jpeg build/images",
+    "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
+    "preview": "vite preview"
+  },
   "dependencies": {
-    "@types/babel__traverse": "^7.0.6",
-    "@types/node": "^16.3.1",
-    "@types/react": "^17.0.14",
-    "@types/react-dom": "^17.0.8",
-    "@types/react-router-dom": "^5.1.7",
-    "@types/styled-components": "^5.1.10",
-    "@typescript-eslint/eslint-plugin": "^4.28.1",
-    "eslint-config-airbnb": "^18.2.1",
-    "eslint-plugin-react": "^7.19.0",
-    "react": "16.8.6",
-    "react-dom": "16.8.6",
-    "react-router-dom": "5.1.2",
-    "react-scripts": "3.0.1",
-    "styled-components": "4.4.0",
-    "styled-icons": "8.4.2"
+    "react": "18.2.0",
+    "react-dom": "18.2.0",
+    "react-router-dom": "^6.16.0",
+    "styled-components": "6.0.8",
+    "styled-icons": "10.47.0"
   },
   "devDependencies": {
-    "eslint": "^5.16.0",
-    "eslint-config-prettier": "^8.3.0",
-    "eslint-import-resolver-typescript": "^2.4.0",
-    "eslint-plugin-prettier": "^3.4.0",
-    "prettier": "^2.3.2",
-    "terser-brunch": "^4.0.0",
-    "typescript": "3.3.3"
-  },
-  "scripts": {
-    "predeploy": "npm run build",
-    "deploy": "gh-pages -d build",
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test --env=jsdom",
-    "eject": "react-scripts eject"
-  },
-  "browserslist": [
-    ">0.2%",
-    "not dead",
-    "not ie <= 11",
-    "not op_mini all"
-  ]
+    "@types/react": "18.2.15",
+    "@types/react-dom": "18.2.7",
+    "@typescript-eslint/eslint-plugin": "6.0.0",
+    "@typescript-eslint/parser": "6.0.0",
+    "@types/react-router-dom": "^5.3.3",
+    "@vitejs/plugin-react-swc": "3.3.2",
+    "eslint": "8.45.0",
+    "eslint-plugin-react-hooks": "4.6.0",
+    "eslint-plugin-react-refresh": "0.4.3",
+    "typescript": "5.0.2",
+    "vite": "4.4.5"
+  }
 }

@@ -1,56 +1,27 @@
-# Personal Page - ReactJs 
+# React + TypeScript + Vite
 
-For the Developer who doesn't want to spend time building a website / portfolio, 
-or wanted a template to start, this project can help you ;)
+This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
-<img src="https://user-images.githubusercontent.com/50468352/73944169-e32d0f80-48d0-11ea-8dc9-c91cdf4756d2.png" width="432" /> <img src="https://user-images.githubusercontent.com/50468352/73944173-e45e3c80-48d0-11ea-8b9a-d894e7d678f4.png" width="432" /> 
+Currently, two official plugins are available:
 
+- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
+- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
 
+## Expanding the ESLint configuration
 
+If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
 
+- Configure the top-level `parserOptions` property like this:
 
-## Getting Started
-
-These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. See deployment for notes on how to deploy the project on a live system.
-
-### Prerequisites
-
-```
-NodeJS ^5.00
-Surge Account
-GitHb Personal Access Token with the  public_repo and read:org checked
-```
-
-### Installing
-
-```
-1 - Download this project
-2 - npm install
-3 - npm start
-4 - modify whatever is necessary
-5 - npm run build
-6 - access the build File
-7 - Deploy on Surge or another platform
+```js
+   parserOptions: {
+    ecmaVersion: 'latest',
+    sourceType: 'module',
+    project: ['./tsconfig.json', './tsconfig.node.json'],
+    tsconfigRootDir: __dirname,
+   },
 ```
 
-And repeat
-
-```
-until finished
-```
-
-## Built With
-
-* [ReactJs](https://pt-br.reactjs.org/)
-* [Styled-Components](https://styled-components.com/)
-* [Styled-Icons](https://styled-icons.js.org/)
-
-
-## Author
-
-* **Lucas Moraes** - *Initial work* - [Personal-page](http://lucas-moraes.surge.sh)
-
-## License
-
-This project is licensed under the MIT License. Enjoy !
-
+- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
+- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
+- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
