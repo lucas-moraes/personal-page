@@ -1,5 +1,5 @@
 import React, {FunctionComponent} from "react";
-import {CardChart} from "../cardChart";
+import {CardChart} from "../CardChart";
 import {TCardSkillsProps} from "./interface";
 import {Col, Card, CardHeader, Checked, CardBody, TextTitle} from "./styles";
 
