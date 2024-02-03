@@ -1,5 +1,5 @@
 import React, { FunctionComponent } from "react";
-import CardResumeExtra from "../../components/cardResumeExtra";
+import CardResumeExtra from "../../components/CardResumeExtra";
 import CardSkills from "../../components/CardSkills";
 import CardResume from "../../components/CardResume";
 import { THomeProps } from "./interface";
